@@ -7,6 +7,7 @@ for(let i = 0; i < 10; i++) {
   initial.push([
     i, 
     { 
+      id: i,
       count: currentCount,
       capacity: capacity
     }
