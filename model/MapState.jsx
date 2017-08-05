@@ -10,6 +10,15 @@ class MapState {
   }
 
   @action
+  setAllRoomData(roomDataArray) {
+    console.log(roomDataArray);
+    for (const roomData of roomDataArray) {
+      this.addRoomData(roomData);
+    }
+    console.log(this.allRoomData);
+  }
+
+  @action
   addRoomData(roomData) {
     // TODO: Change this? Maybe keep a record of all room data across time.
     this.setRoomData(roomData);
@@ -32,6 +41,7 @@ class MapState {
       result.push({
         type: 'Feature',
         properties: {
+          id: key,
           name: LOCATIONS[key].name,
           count,
           capacity
