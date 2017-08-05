@@ -22,11 +22,9 @@ class MapState {
 
   @action
   setAllRoomData(roomDataArray: Array<any>) {
-    console.log(roomDataArray);
-    for (const roomJson of roomDataArray) {
+    for (let roomJson of roomDataArray) {
       this.addRoomData(roomJson.id, new RoomData(roomJson));
     }
-    console.log(this.allRoomData);
   }
 
   @action
@@ -48,7 +46,9 @@ class MapState {
   @computed
   get allRoomGeoData() {
     const result = [];
-    for (const [key, item] of idMappings.entries()) {
+    for (const [key1, roomData] of this.allRoomState.entries()) {
+      const key2: any = key1;
+      const key = parseInt(key2);
       result.push({
         type: 'Feature',
         properties: {
@@ -57,8 +57,8 @@ class MapState {
         geometry: {
           type: 'Polygon',
           coordinates: [idMappings.get(key).coordinates.map(([lng, lat]) => [lat, lng])]
-        }
-      });
+          }
+      })
     }
     return result;
   }
