@@ -29,7 +29,6 @@ class MapState {
   get allRoomGeoData() {
     const result = [];
     for (const [key, {count, capacity}] of this.allRoomData) {
-      console.log(capacity);
       result.push({
         type: 'Feature',
         properties: {
@@ -39,7 +38,7 @@ class MapState {
         },
         geometry: {
           type: 'Polygon',
-          coordinates: [LOCATIONS[key].coordinates]
+          coordinates: [LOCATIONS[key].coordinates.map(([lng, lat]) => [lat, lng])]
         }
       });
     }
