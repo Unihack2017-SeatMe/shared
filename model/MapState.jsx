@@ -1,19 +1,25 @@
 import { observable, computed, action } from 'mobx';
 class MapState {
   @observable
-  all_room_state = null;
-  constructor(initial_room_data) {
-    this.all_room_state = initial_room_data;
+  allRoomState = null;
+  constructor(initialRoomData) {
+    this.allRoomState = initialRoomData;
   }
 
   @action
   addRoomData(roomData) {
-    this.all_room_state.set(roomData.id, roomData);
+    // TODO: Change this? Maybe keep a record of all room data across time.
+    this.setRoomData(roomData);
+  }
+
+  @action
+  setRoomData(roomData) {
+    this.allRoomState.set(roomData.id, roomData);
   }
 
   @computed
-  get all_room_data() {
-    return this.all_room_state;
+  get allRoomData() {
+    return this.allRoomState;
   }
 }
 export { MapState };
