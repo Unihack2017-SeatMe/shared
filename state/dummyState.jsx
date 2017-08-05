@@ -13,5 +13,5 @@ for(let i = 0; i < 5; i++) {
   ]);
   currentCount += 10;
 }
-const mapState = new MapState(initial);
+const mapState = new MapState(new Map(initial));
 export { mapState };
