@@ -1,6 +1,2 @@
-const socketKeys = {
-  roomDataKey: 'room_data',
-  allRoomDataKey: 'all_room_data'
-}
-export { socketKeys };
-export default socketKeys;
+export const roomDataKey = 'room_data';
+export const allRoomDataKey = 'all_room_data'
