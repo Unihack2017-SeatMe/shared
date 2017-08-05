@@ -13,5 +13,11 @@ for(let i = 0; i < 5; i++) {
   ]);
   currentCount += 10;
 }
-const mapState = new MapState(new Map(initial));
+const mapState = new MapState(initial);
+setInterval(() => {
+  for(let key of mapState.keys()) {
+    const roomData = mapState.get(key);
+    roomData.count = Math.random() * roomData.capacity;
+  }
+});
 export { mapState };
