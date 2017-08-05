@@ -3,7 +3,7 @@ let currentId = 0;
 const capacity = 100;
 let currentCount = 30;
 const initial: Array<any> = [];
-for(let i = 0; i < 19; i++) {
+for(let i = 0; i <= 18; i++) {
   initial.push(
     { 
       id: i,
