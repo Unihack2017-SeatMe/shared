@@ -13,6 +13,7 @@ class RoomData {
     this.count = jsonData.count;
     console.log(jsonData);
     const data = idMappings.get(jsonData.id);
+    console.log(jsonData);
     this.roomName = data.name;
     this.coordinates = data.coordinates;
   }
