@@ -26,10 +26,10 @@ class MapState {
   }
 
   @computed
-  get all_room_geo_data() {
+  get allRoomGeoData() {
     const result = [];
-    for (const [key, {count, capacity}] of this.all_room_data.entries()) {
-      console.log(key);
+    for (const [key, {count, capacity}] of this.allRoomData) {
+      console.log(capacity);
       result.push({
         type: 'Feature',
         properties: {
@@ -43,6 +43,7 @@ class MapState {
         }
       });
     }
+    return result;
   }
 }
 

@@ -6,10 +6,9 @@ const initial = [];
 for(let i = 0; i < 5; i++) {
   initial.push([
     i, 
-    { 
-      id: i,
+    {
       count: currentCount,
-      capacity: capacity
+      capacity
     }
   ]);
   currentCount += 10;
