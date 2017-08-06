@@ -109,13 +109,13 @@ function linearToRgb(linear) {
 
 function fullnessToColour(fullness) {
   let emptyColourFg = labToLch(xyzToLab(linearToXyz(rgbToLinear([
-    0.0, 0.478, 0.345
+    0.54509803921568627450980392156863, 0.76470588235294117647058823529412, 0.29019607843137254901960784313725
   ]))));
   let midColourFg = labToLch(xyzToLab(linearToXyz(rgbToLinear([
-    1.0, 0.671, 0.102
+    1, 0.75686274509803921568627450980392, 0.02745098039215686274509803921569
   ]))));
   let fullColourFg = labToLch(xyzToLab(linearToXyz(rgbToLinear([
-    0.812, 0.176, 0.090
+    0.83529411764705882352941176470588, 0, 0
   ]))));
   let finalColourFg = linearToRgb(xyzToLinear(labToXyz(lchToLab([
     emptyColourFg[0] + fullness*(fullColourFg[0] - emptyColourFg[0]),
